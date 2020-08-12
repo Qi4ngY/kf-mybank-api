@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta cmybankset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>云南联通信用购</title>
+    <style>
+        * {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            outline: none;
+            text-decoration: none;
+            font-family: '幼圆', '微软雅黑', '宋体'
+        }
+        a {
+            color: #00aaef;
+        }
+        body,html {
+            max-width: 640px;
+            margin: 0 auto;
+            height: 100%;
+            background-color: #eee;
+            font-size: 16px;
+        }
+        #root>div {
+            overflow: hidden;
+        }
+        .top {
+            background-color: #fff;
+            margin-top: 10px;
+            padding: 1rem;
+            margin-bottom: 6rem;
+        }
+        .top .header p {
+            font-size: .85rem;
+            color: #00aaef;
+        }
+        .top .header .title {
+            display: -webkit-box;
+            display: box;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            box-align: center;
+            height: 3rem;
+        }
+        .top .header .title span {
+            width: 3px;
+            display: block;
+            height: 1rem;
+            background-color: #00aaef;
+        }
+        .top .header .title p {
+            margin-left: 1rem;
+            font-size: .85rem;
+        }
+        .top .list>div{
+            height: 2rem;
+            display: -webkit-box;
+            display: box;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            box-align: center;
+            -webkit-box-pack: justify;
+            -moz-box-pack: justify;
+            box-pack: justify;
+            color: #aaa;
+        }
+        .top .list .img {
+            height: auto;
+            width: 40%;
+            position: relative;
+            margin: 1rem auto 0;
+            padding-top: 60%;
+            display: -webkit-box;
+            display: box;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            box-align: center;
+            -webkit-box-pack: center;
+            -moz-box-pack: center;
+            box-pack: center;
+        }
+        .top .list .img img {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        .is-argee {
+            padding: .85rem;
+            display: -webkit-box;
+            display: box;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            box-align: center;
+            background-color: #fff;
+            line-height: normal;
+        }
+        .is-argee input[type="checkbox"] {
+            display: block;
+            margin-right: .5rem;
+        }
+        .pay {
+            background-color: #fff;
+            display: -webkit-box;
+            display: box;
+        }
+        .pay .left {
+            box: 1;
+            box-flex: 1;
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            display: -webkit-box;
+            display: box;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            box-align: center;
+            padding-left: .85rem;
+        }
+        .pay .left strong {
+            color: #00aaef;
+            font-size: 1.2rem;
+            margin-left: .85rem;
+        }
+        .pay .right {
+            box: 1;
+            box-flex: 1;
+            -webkit-box-flex: 1;
+            -moz-box-flex: 1;
+            display: -webkit-box;
+            display: box;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            box-align: center;
+        }
+        .pay .right button{
+            height: 3rem;
+            line-height: normal;
+            display: table;
+            width: 100%;
+            color: #fff;
+            font-size: 1.2rem;
+            background-color: #00aaef;
+        }
+        #imgViewWarp{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            overflow: auto;
+            background-color: rgba(0,0,0, .3);
+            display: -webkit-box;
+            display: box;
+            -webkit-box-align: center;
+            -moz-box-align: center;
+            box-align: center;
+            z-index: 5;
+        }
+        #imgViewWarp img{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <div>
+        <div class="top">
+            <div class="header">
+                <p class="tips">
+                    以下为您本次预授权冻结订单的信息，请仔细核对后完成授权!
+                </p>
+                <div class="title">
+                    <span></span>
+                    <p>订单详情</p>
+                </div>
+            </div>
+            <div class="list">
+                <div>
+                    <span>办理套餐号码：</span>
+                    <p>${phone_no!}</p>
+                </div>
+                <div>
+                    <span>用户姓名：</span>
+                    <p>${user_name!}</p>
+                </div>
+                <div>
+                    <span>用户身份证号码：</span>
+                    <p>${card_no!}</p>
+                </div>
+                <div>
+                    <span>套餐名称：</span>
+                    <p>${title!}</p>
+                </div>
+                <div>
+                    <span>联系人手机号码：</span>
+                    <p>${contact_phone_no!}</p>
+                </div>
+                <div class="img">
+                    <img src="${img!}" alt="">
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer">
+            <div class="is-argee">
+                <input type="checkbox" id="agree">
+                <label for="agree">同意</label>
+                <a href="../../../../pre_auth_protocol/yn_cu_protocol.html" target="_self">《支付宝预授权冻结服务协议》</a>
+            </div>
+            <div class="pay">
+                <div class="left">
+                    冻结：<strong>￥${total_amount!}</strong>
+                </div>
+                <div class="right">
+                    <button id="J_btn">去授权</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://gw.alipayobjects.com/as/g/h5-lib/alipayjsapi/3.1.1/alipayjsapi.inc.min.js"></script>
+<script>
+	var btn = document.querySelector('#J_btn');
+	btn.addEventListener('click', function(){
+		if(document.querySelector('#agree').checked){
+			window.location.href = '${pay_url!}';
+		}else{
+			ap.alert("请勾选并同意《支付宝预授权冻结服务协议》！");
+		}
+	});
+</script>
+</body>
+</html>

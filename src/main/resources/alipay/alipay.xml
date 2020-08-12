@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alipay>
+	<!--支付宝网关名、partnerId和appId-->
+	<open_api_domain>https://openapi.alipay.com/gateway.do</open_api_domain>
+
+	<!--沙箱环境-->
+	<!--<open_api_domain>https://openapi.alipaydev.com/gateway.do</open_api_domain>-->
+
+	<fee_scan_pay>0.35</fee_scan_pay>
+	<!-- 花呗分期手续费比率配置-->
+	<cost_rate>{"0":{"24":12.5,"12":7.5,"6":4.5,"3":2.3},"100":{"24":12.5,"12":7.5,"6":4.5,"3":1.8}}</cost_rate>
+
+	<!--分佣账号 交易实时的分佣-->
+	<default_royalty_info_trans_in>2088521388856475</default_royalty_info_trans_in>
+
+	<!--返佣账号 每月支付宝结算的金额-->
+	<sys_service_provider_id>2088821153023555</sys_service_provider_id>
+
+	<disable_pay_channels>pcredit,pcreditpayInstallment</disable_pay_channels>
+
+	<trade_min_time>080000</trade_min_time>
+
+	<trade_max_time>230000</trade_max_time>
+
+	<trade_time_error_desc>晚上11点00分至早上08点00分禁止交易!</trade_time_error_desc>
+</alipay>
